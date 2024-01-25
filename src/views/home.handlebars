@@ -1,0 +1,49 @@
+<div>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>TITULO</th>
+                <th>DESCRIPCION</th>
+                <th>CODIGO</th>
+                <th>PRECIO</th>
+                <th>STATUS</th>
+                <th>CANTIDAD</th>
+                <th>CATEGORIA</th>
+                <th>IMAGEN</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            {{#each products}}
+
+                <tr>
+                    <td>{{this.id}}</td>
+                    <td>{{this.title}}</td>
+                    <td>{{this.description}}</td>
+                    <td>{{this.code}}</td>
+                    <td>{{this.price}}</td>
+                    <td>{{this.status}}</td>
+                    <td>{{this.stock}}</td>
+                    <td>{{this.category}}</td>
+                    <td>{{this.thumbnails}}</td>
+                </tr>
+            {{/each}}
+
+        </tbody>
+    </table>
+
+
+
+    {{!-- {{#if isAdmin}}
+        {{#each products}}
+            <div>
+                <td>{{this.title}}</td>
+                <td>{{this.description}}</td>
+            </div>
+        {{/each}}
+    {{else}}
+        <td>No tienes permisos para ver la lista de alimentos</td>
+    {{/if}} --}}
+</div>
