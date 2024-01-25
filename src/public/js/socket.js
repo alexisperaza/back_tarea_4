@@ -1,13 +1,27 @@
 const socket = io()
+import { productManager } from "../../controllers/ProductManager.js"
 
-const messageInput = document.getElementById('messageInput');
-const sendMessagesButton = document.getElementById('sendMessagesButton');
+const titleInput = document.getElementById('titleInput');
+const descriptionInput = document.getElementById('descriptionInput');
+const codeInput = document.getElementById('codeInput');
+const priceInput = document.getElementById('priceInput');
+const stockInput = document.getElementById('stockInput');
+const categoryInput = document.getElementById('categoryInput');
+const thumbnailsInput = document.getElementById('thumbnailsInput');
+
+const addProductButton = document.getElementById('addProductButton');
 const messagesContainer = document.getElementById('messagesContainer');
 
-sendMessagesButton.addEventListener('click', ()=> {
-    const inputText = messageInput.value;
-    socket.emit('message', inputText);
-    messageInput.value = '';
+addProductButton.addEventListener('click', ()=> {
+    socket.emit("addProduct", {
+        title: titleInput,
+        description: descriptionInput,
+        code: codeInput,
+        price: priceInput,
+        stock: stockInput,
+        category: categoryInput,
+        thumbnails: thumbnailsInput
+      });
 })
 
 // messageInput.addEventListener('input', event => {

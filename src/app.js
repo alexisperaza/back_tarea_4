@@ -41,8 +41,8 @@ const socketServer = new Server(httpServer);
 socketServer.on('connection', socket => {
   console.log("nuevo cliente conectado")
 
-  // //activando un evento
-  // socket.on('message', data=> {
+  //activando un evento
+  // socket.on('addProducts', data=> {
   //     mensajes.push({socketId: socket.id, mensaje: data})
   //     socketServer.emit('message', data)
   //     socketServer.emit('messages', mensajes);
